@@ -62,7 +62,6 @@ public class Principal {
 
 	public static void AEstrela(){
 
-		List<Cidade> ArrayCidade = new ArrayList<Cidade> ();
 		List<Rota> ArrayRota = new ArrayList<Rota> ();
 		// ( id, cidade1, cidade2, distancia, qualidade)
 		ArrayRota.add(new Rota(1, "A", "D", 70, 80));
@@ -78,52 +77,52 @@ public class Principal {
 		ArrayRota.add(new Rota(11, "G", "H", 30, 100));
 		ArrayRota.add(new Rota(12, "G", "I", 110, 70));
 		
-		ArrayCidade.add(new Cidade("A",false)); //0
-		ArrayCidade.add(new Cidade("B",false)); //1
-		ArrayCidade.add(new Cidade("C",false)); //2
-		ArrayCidade.add(new Cidade("D",false)); //3
-		ArrayCidade.add(new Cidade("E",false)); //4
-		ArrayCidade.add(new Cidade("F",false)); //5
-		ArrayCidade.add(new Cidade("G",false)); //6
-		ArrayCidade.add(new Cidade("H",false)); //7
-		ArrayCidade.add(new Cidade("I",false)); //8
+		Cidade A = new Cidade("A",false); //0
+		Cidade B = new Cidade("B",false); //1
+		Cidade C = new Cidade("C",false); //2
+		Cidade D = new Cidade("D",false); //3
+		Cidade E = new Cidade("E",false); //4
+		Cidade F = new Cidade("F",false); //5
+		Cidade G = new Cidade("G",false); //6
+		Cidade H = new Cidade("H",false); //7
+		Cidade I = new Cidade("I",false); //8
 
 
-		ArrayCidade.get(0).cidadesVizinhas.add(ArrayCidade.get(3)); // Rota 01 - A, D
-		ArrayCidade.get(3).cidadesVizinhas.add(ArrayCidade.get(0)); // Rota 01 - D, A
+		A.cidadesVizinhas.add(D); // Rota 01 - A, D
+		D.cidadesVizinhas.add(A); // Rota 01 - D, A
 		
-		ArrayCidade.get(0).cidadesVizinhas.add(ArrayCidade.get(2)); // Rota 02 - A, C
-		ArrayCidade.get(2).cidadesVizinhas.add(ArrayCidade.get(0)); // Rota 02 - C, A
+		A.cidadesVizinhas.add(C); // Rota 02 - A, C
+		C.cidadesVizinhas.add(A); // Rota 02 - C, A
 		
-		ArrayCidade.get(0).cidadesVizinhas.add(ArrayCidade.get(1)); // Rota 03 - A, B
-		ArrayCidade.get(1).cidadesVizinhas.add(ArrayCidade.get(0)); // Rota 03 - B, A
+		A.cidadesVizinhas.add(B); // Rota 03 - A, B
+		B.cidadesVizinhas.add(A); // Rota 03 - B, A
 		
-		ArrayCidade.get(0).cidadesVizinhas.add(ArrayCidade.get(8)); // Rota 04 - A, I
-		ArrayCidade.get(8).cidadesVizinhas.add(ArrayCidade.get(0)); // Rota 04 - I, A
+		A.cidadesVizinhas.add(I); // Rota 04 - A, I
+		I.cidadesVizinhas.add(A); // Rota 04 - I, A
 		
-		ArrayCidade.get(1).cidadesVizinhas.add(ArrayCidade.get(4)); // Rota 05 - B, E
-		ArrayCidade.get(4).cidadesVizinhas.add(ArrayCidade.get(1)); // Rota 05 - E, B
+		B.cidadesVizinhas.add(E); // Rota 05 - B, E
+		E.cidadesVizinhas.add(B); // Rota 05 - E, B
 		
-		ArrayCidade.get(2).cidadesVizinhas.add(ArrayCidade.get(4)); // Rota 07 - C, E
-		ArrayCidade.get(4).cidadesVizinhas.add(ArrayCidade.get(2)); // Rota 07 - E, C
+		C.cidadesVizinhas.add(E); // Rota 07 - C, E
+		E.cidadesVizinhas.add(C); // Rota 07 - E, C
 		
-		ArrayCidade.get(2).cidadesVizinhas.add(ArrayCidade.get(8)); // Rota 09 - C, I
-		ArrayCidade.get(8).cidadesVizinhas.add(ArrayCidade.get(2)); // Rota 09 - I, C
+		C.cidadesVizinhas.add(I); // Rota 09 - C, I
+		I.cidadesVizinhas.add(C); // Rota 09 - I, C
 		
-		ArrayCidade.get(3).cidadesVizinhas.add(ArrayCidade.get(5)); // Rota 06 - D, F
-		ArrayCidade.get(5).cidadesVizinhas.add(ArrayCidade.get(3)); // Rota 06 - F, D
+		D.cidadesVizinhas.add(F); // Rota 06 - D, F
+		F.cidadesVizinhas.add(D); // Rota 06 - F, D
 		
-		ArrayCidade.get(4).cidadesVizinhas.add(ArrayCidade.get(8)); // Rota 10 - E, I
-		ArrayCidade.get(8).cidadesVizinhas.add(ArrayCidade.get(4)); // Rota 10 - I, E
+		E.cidadesVizinhas.add(I); // Rota 10 - E, I
+		I.cidadesVizinhas.add(E); // Rota 10 - I, E
 		
-		ArrayCidade.get(5).cidadesVizinhas.add(ArrayCidade.get(6)); // Rota 08 - F, G
-		ArrayCidade.get(6).cidadesVizinhas.add(ArrayCidade.get(5)); // Rota 08 - G, F
+		F.cidadesVizinhas.add(G); // Rota 08 - F, G
+		G.cidadesVizinhas.add(F); // Rota 08 - G, F
 		
-		ArrayCidade.get(6).cidadesVizinhas.add(ArrayCidade.get(7)); // Rota 11 - G, H
-		ArrayCidade.get(7).cidadesVizinhas.add(ArrayCidade.get(6)); // Rota 11 - H, G
+		G.cidadesVizinhas.add(H); // Rota 11 - G, H
+		H.cidadesVizinhas.add(G); // Rota 11 - H, G
 		
-		ArrayCidade.get(6).cidadesVizinhas.add(ArrayCidade.get(8)); // Rota 12 - G, I
-		ArrayCidade.get(8).cidadesVizinhas.add(ArrayCidade.get(6)); // Rota 12 - I, G
+		G.cidadesVizinhas.add(I); // Rota 12 - G, I
+		I.cidadesVizinhas.add(G); // Rota 12 - I, G
 		
 		
 		//System.out.println("A:" + ArrayCidade.get(0).nome +" se liga com " + ArrayCidade.get(0).cidadesVizinhas.get(0).nome);
@@ -131,8 +130,9 @@ public class Principal {
 		
         //Cidade destino = new Cidade("D",false);
         
-        Profundidade.buscaProfundidade(ArrayCidade.get(0),ArrayCidade.get(7));
-		
+        Profundidade.buscaProfundidade(A,H);
+        System.out.println(A.cidadesVizinhas.get(1).cidadesVizinhas.get(1).cidadesVizinhas.get(0).nome);
+        
 	}
 	
 }
